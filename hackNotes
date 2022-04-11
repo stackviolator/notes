@@ -1,0 +1,31 @@
+#!/bin/bash
+
+FILE=notes.txt
+
+if test -f "$FILE"; then
+
+	if [ -s "$FILE" ]; then
+		/usr/bin/nvim $FILE
+
+	else
+		echo "------------------
+NOTES
+------------------
+
+------------------
+PROCESS
+------------------" > $FILE
+		/usr/bin/nvim $FILE
+	fi
+
+else
+	touch "$FILE"
+		echo "------------------
+NOTES
+------------------
+
+------------------
+PROCESS
+------------------" > $FILE
+		/usr/bin/nvim $FILE
+fi
