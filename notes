@@ -1,17 +1,18 @@
 #!/bin/bash
 
 FILE=notes.txt
+nvim_bin=$(which nvim)
 
 if test -f "$FILE"; then
 
 	if [ -s "$FILE" ]; then
-		/usr/bin/nvim $FILE
+		$nvim_bin $FILE
 
 	else
 		echo "------------------
 NOTES
 ------------------" > $FILE
-		/usr/bin/nvim $FILE
+		$nvim_bin $FILE
 	fi
 
 else
@@ -19,5 +20,5 @@ else
 		echo "------------------
 NOTES
 ------------------" > $FILE
-		/usr/bin/nvim $FILE
+		$nvim_bin $FILE
 fi
